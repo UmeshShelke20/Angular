@@ -1,0 +1,23 @@
+<div class="list">
+    <div >
+      <label >Enter Name: </label>
+      <input type="text" placeholder="eg. Umesh Shelke" [(ngModel)]="ss.stu.name"  >
+    </div>
+    <div >
+      <label >Enter Mobile No:</label>
+      <input type="number" placeholder="eg.9097096654" [(ngModel)]="ss.stu.mobile">
+    </div>
+    <div >
+      <label >Enter Department Name:</label>
+      <input type="text" placeholder="eg. civi, mech etc" [(ngModel)]="ss.stu.dept">
+    </div>
+    <button type="submit" (click)="submitData(ss.stu)">Submit</button>
+    <div>
+        <div class="form-group mx-sm-3 mb-2">
+          <label  class="sr-only">Enter Id for student details</label>
+          <input type="number" class="form-control" placeholder="eg. 1,2,3 etc" [(ngModel)]="n">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2" (click)="searchId()">Search Details</button>
+    </div>
+  </div>
+ 

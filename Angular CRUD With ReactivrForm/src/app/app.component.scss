@@ -1,0 +1,11 @@
+.button-group{
+    padding-top: 1rem;
+    &>button{
+        margin-right: 0.5rem;
+    }
+}
+
+
+.bg-color{
+    background-color: red;
+}

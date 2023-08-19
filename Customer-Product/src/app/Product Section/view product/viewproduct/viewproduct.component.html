@@ -1,0 +1,24 @@
+<div class="table">
+
+    <table >
+<tr>
+<th>Product pid</th>
+<th>Product name</th>
+<th>Product quantity</th>
+<th>Product price</th>
+<th>Update</th>
+<th>Delete</th>
+</tr>
+<tr *ngFor="let s of datastore">
+    
+    <td>{{s.pid}}</td>
+    <td>{{s.pname}}</td>
+    <td>{{s.pquantity}}</td>
+    <td>{{s.pprice}}</td>
+     <td><input  type="button"  class="btn-primary" value="Update" (click)="update(s.pid)"></td>
+    <td><input type="button" class="btn-danger" value="Delete" (click)="deletes(s.pid)"></td>
+</tr>
+ 
+    </table>
+</div>
+<button type="button" class="btn btn-secondary" routerLink="/Product-Section/productHome">back</button>

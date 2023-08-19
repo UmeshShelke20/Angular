@@ -1,0 +1,80 @@
+
+<!-- {{Studentform.value | json}} -->
+<form [formGroup]="newclass">
+    <h2>Registration form</h2>
+    <div class="input-group mb-3">
+      <input hidden type="number" formControlName="id" >
+    </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Class name</span>
+        <input type="text" class="form-control" placeholder="Class Name" formControlName="classname" >
+      </div >
+      <div  *ngIf="e['classname'].touched && e['classname'].errors?.['required']" class="text-danger error, input-group mb-3">
+         Class Name required</div>
+        
+        <div  formArrayName="students" >
+            <div  *ngFor="let chlid of newclass.get('students')['controls'];let i=index"
+            formGroupName="{{i}}">
+          <div>
+            <h2>{{i+1}} > Student Details</h2>
+            <div class="input-group mb-3">
+            <input hidden type="number" formControlName="id" >
+          </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Name</span>
+              <input type="text" class="form-control" placeholder="Student Name" formControlName="name">
+            </div >
+            <!-- <div *ngIf="e['name'].touched && e['name'].errors?.['required']" class="text-danger error, input-group mb-3">
+                Name required</div> -->
+           <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Roll no:</span>
+            <input type="number" class="form-control" placeholder="Student Rollno" formControlName="rollno">
+          </div>
+          <!-- <div *ngIf="e['rollno'].touched && e['rollno'].errors?.['required']" class="text-danger error, input-group mb-3">
+            rollno required</div> -->
+          <div formGroupName="address">
+          <h2> {{i+1}} > Address details</h2>
+          <div class="input-group mb-3">
+          <input hidden type="number" formControlName="id" >
+          </div>
+          
+          <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">City</span>
+          <input type="text" class="form-control" placeholder="city Name" formControlName="city">
+          </div >
+          <!-- <div *ngIf="e['city'].touched && e['city'].errors?.['required']" class="text-danger error, input-group mb-3">
+          city required</div> -->
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Taluka</span>
+            <input type="text" class="form-control" placeholder="Taluka Name" formControlName="taluka">
+          </div >
+          <!-- <div *ngIf="e['taluka'].touched && e['taluka'].errors?.['required']" class="text-danger error, input-group mb-3">
+            taluka required</div> -->
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">District</span>
+            <input type="text" class="form-control" placeholder="district Name" formControlName="district">
+          </div >
+          <!-- <div *ngIf="e['district'].touched && e['district'].errors?.['required']" class="text-danger error, input-group mb-3">
+            district required</div> -->
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">State</span>
+            <input type="text" class="form-control" placeholder="State Name" formControlName="state">
+          </div >
+          <!-- <div *ngIf="e['state'].touched && e['state'].errors?.['required']" class="text-danger error, input-group mb-3">
+            state required</div> -->
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Pincode</span>
+            <input type="text" class="form-control" placeholder="Pincode Name" formControlName="pincode">
+          </div >
+          <!-- <div *ngIf="e['pincode'].touched && e['pincode'].errors?.['required']" class="text-danger error, input-group mb-3">
+            pincode required</div> -->
+          </div>
+        </div>
+        </div>
+      </div>
+    <div class="d-flex p-2 justify-content-between">
+      <button  class="btn btn-success" (click)="addStudent()">Add Student in Class</button> 
+      <button  class="btn btn-success" (click)="onSubmit()">Submit</button>
+    </div>
+      </form>
+    

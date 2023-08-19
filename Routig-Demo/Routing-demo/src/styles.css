@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+nav a:active{
+    color: rgb(13, 0, 255);
+}
+nav a:hover{
+    color: rgb(255, 179, 0);
+    background-color: aqua;
+}
+nav a:visited,a:link{
+    color: rgb(255, 0, 144);
+}
+nav a{
+    margin-left: 0.5cm;
+    margin-right: 0.5cm;
+}

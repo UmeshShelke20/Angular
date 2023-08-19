@@ -1,0 +1,74 @@
+{
+  "Employee": [
+    {
+      "id": 1,
+      "ename": "Umesh Shelke",
+      "eage": 33,
+      "emobile": 9096092239,
+      "esalary": 600000,
+      "edob": "20/June/1990",
+      "ebloodgroup": "O+",
+      "ereleno": 9850497223
+    },
+    {
+      "id": 2,
+      "ename": "Ram Kale Patil",
+      "eage": 32,
+      "emobile": 9096092239,
+      "esalary": 600000,
+      "edob": "20/June/1990",
+      "ebloodgroup": "O+",
+      "ereleno": "9898989898"
+    },
+    {
+      "id": 3,
+      "ename": "Radha",
+      "eage": 13,
+      "emobile": 990999,
+      "esalary": 1234,
+      "edob": "20/May/2000",
+      "ebloodgroup": "O-",
+      "ereleno": 909898
+    },
+    {
+      "id": 11,
+      "ename": "SunandaTai Shelke",
+      "eage": 23,
+      "emobile": 9860986787,
+      "esalary": 1000000,
+      "edob": "7 /August/2000",
+      "ebloodgroup": "A+",
+      "ereleno": 9098876
+    },
+    {
+      "id": 21,
+      "ename": "Ganesh",
+      "eage": 23,
+      "emobile": 9098789887,
+      "esalary": 12344556,
+      "edob": "7 /August/2000",
+      "ebloodgroup": "A+",
+      "ereleno": 9098876
+    },
+    {
+      "id": 27,
+      "ename": "Ram Kapase",
+      "eage": 23,
+      "emobile": 8767765654,
+      "esalary": 23456754,
+      "edob": "34/May/1987",
+      "ebloodgroup": "AB",
+      "ereleno": 9876565656
+    },
+    {
+      "id": 28,
+      "ename": "Ram Kale",
+      "eage": 45,
+      "emobile": 9898989898,
+      "esalary": 9999,
+      "edob": "20/jane/2000",
+      "ebloodgroup": "O+",
+      "ereleno": 9999999999
+    }
+  ]
+}

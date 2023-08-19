@@ -1,0 +1,87 @@
+<style>
+button{
+margin-left:1cm;
+}
+</style>
+<nav class="navbar navbar-light" style="background-color: #e4fde3;">
+<div>
+<button type="button" class="btn btn-primary" routerLink="/">Back</button>
+</div>
+</nav>
+<div >
+    <label for="form">Appointment Request Form</label>
+<form  id="form" [formGroup]="patient" (ngSubmit)="onSubmit()">
+<div class="input-group mb-3">
+<label class="input-group-text" for="name">Patient name:</label>
+<input id="name" [class.is-invalid]="(registerFormControl.name.touched || submitted )&&registerFormControl.name.errors?.required" class="form-control ,is-invalid " type="text" name="name" formControlName="name">
+</div>
+<div *ngIf="(registerFormControl.name.touched || submitted )&& (registerFormControl.name.errors?.required)" class="input-group mb-3"><small class="alert alert-danger">Name Required!</small></div>
+
+<div class="input-group mb-3">
+<label class="input-group-text" for="city">Patient city:</label>
+<input id="city" [class.is-invalid]="(registerFormControl.city.touched || submitted )&&registerFormControl.city.errors?.required" class="form-control ,is-invalid" type="text" name="city" formControlName="city">
+</div>
+<div *ngIf="(registerFormControl.city.touched || submitted )&& (registerFormControl.city.errors?.required)" class="input-group mb-3" ><small class="alert alert-danger">City Name Required!</small></div>
+<div class="input-group mb-3">
+<label class="input-group-text" for="state">Patient state:</label>
+<input id="state" [class.is-invalid]="(registerFormControl.state.touched || submitted )&&registerFormControl.state.errors?.required" class="form-control ,is-invalid "type="text" name="state" formControlName="state">
+</div>
+<div *ngIf="(registerFormControl.state.touched || submitted )&& (registerFormControl.state.errors?.required)" class="input-group mb-3"><small class="alert alert-danger">State Required!</small></div>
+
+<div class="input-group mb-3">
+<label class="input-group-text" for="date">Patient date:</label>
+<input id="date" [class.is-invalid]="(registerFormControl.date.touched || submitted )&&registerFormControl.date.errors?.required" class="form-control ,is-invalid "type="date" name="date" formControlName="date">
+</div>
+<div *ngIf="(registerFormControl.date.touched || submitted )&& (registerFormControl.date.errors?.required)" class="input-group mb-3"><small class="alert alert-danger">Date Required!</small></div>
+
+<div class="input-group mb-3">
+<label class="input-group-text" for="time">Apointment expected time:</label>
+<input id="time" [class.is-invalid]="(registerFormControl.time.touched || submitted )&&registerFormControl.time.errors?.required" class="form-control ,is-invalid "type="time" name="time" formControlName="time">
+</div>
+<div *ngIf="(registerFormControl.time.touched || submitted )&& (registerFormControl.time.errors?.required)" class="input-group mb-3"><small class="alert alert-danger">time Required!</small></div>
+
+<div class="input-group mb-3">
+<input hidden  class="form-control  "type="text" name="status" formControlName="status" (value)="status">
+</div>
+<div class="input-group mb-3">
+<label class="input-group-text" for="symptom">Patient symptom:</label>
+<input id="symptom" [class.is-invalid]="(registerFormControl.symptom.touched || submitted )&&registerFormControl.symptom.errors?.required" class="form-control ,is-invalid "type="text" name="symptom" formControlName="symptom">
+</div>
+<div *ngIf="(registerFormControl.symptom.touched || submitted )&& (registerFormControl.symptom.errors?.required)" class="input-group mb-3"><small class="alert alert-danger">Symptom Required!</small></div>
+
+<div class="input-group mb-3">
+<label class="input-group-text" for="precautions">Patient precautions:</label>
+<input id="precautions" [class.is-invalid]="(registerFormControl.precautions.touched || submitted )&&registerFormControl.precautions.errors?.required" class="form-control ,is-invalid "type="text" name="precautions" formControlName="precautions">
+</div>
+<div *ngIf="(registerFormControl.precautions.touched || submitted )&& (registerFormControl.precautions.errors?.required)" class="input-group mb-3"><small class="alert alert-danger">Precautions Required!</small></div>
+
+<div class="input-group mb-3"formGroupName="specialist" >
+<div class="input-group mb-3" >
+<label class="input-group-text" for="dname">Specialist Name :</label>
+<input id="dname" [class.is-invalid]="(specialist['dname'].touched || submitted )&& specialist['dname'].errors?.required" class="form-control ,is-invalid "type="text" name="dname" formControlName="dname">
+</div > 
+<div *ngIf="(specialist['dname'].touched || submitted )&& (specialist['dname'].errors?.required)" class="input-group mb-3"><small class="alert alert-danger">Doctor name Required!</small></div>
+<div class="input-group mb-3">
+<label class="input-group-text" for="ddegree">Specialist degree :</label>
+<input id="ddegree" [class.is-invalid]="(specialist.ddegree.touched || submitted )&&specialist.ddegree.errors?.required" class="form-control ,is-invalid "type="text" name="ddegree" formControlName="ddegree">
+</div > 
+<div *ngIf="(specialist['ddegree'].touched || submitted )&& (specialist['ddegree'].errors?.required)" class="input-group mb-3"><small class="alert alert-danger">Doctor ddegree name Required!</small></div>
+
+<div class="input-group mb-3">
+<label class="input-group-text" for="dmobno">Specialist mobile no :</label>
+<input id="dmobno" [class.is-invalid]="(specialist.dmobno.touched || submitted )&&specialist.dmobno.errors?.required" required minlength="10"  class="form-control ,is-invalid "type="text" name="dmobno" formControlName="dmobno">
+</div > 
+<div *ngIf="(specialist['dmobno'].touched || submitted )&& (specialist['dmobno'].errors?.required)" class="input-group mb-3"><small class="alert alert-danger">Doctor mobile number Required!</small></div>
+<div *ngIf="(specialist['dmobno'].touched || submitted ) && (specialist['dmobno'].errors?.['minlength'])"  class="alert alert-danger" >mobile number must be at least 10 digit long.</div>
+<div class="input-group mb-3" >
+<label class="input-group-text" for="daddress">Specialist address :</label>
+<input id="daddress" [class.is-invalid]="(specialist.daddress.touched || submitted )&&specialist.daddress.errors?.required" class="form-control ,is-invalid "type="text" name="daddress" formControlName="daddress">
+</div> 
+<div *ngIf="(specialist['daddress'].touched || submitted )&& (specialist['daddress'].errors?.required)" class="input-group mb-3"><small class="alert alert-danger">Doctor address Required!</small></div>
+
+</div>
+<div  class="input-group mb-3">
+    <button type="submit"  class="btn btn-primary" >Submit</button>
+</div>
+</form>
+</div>

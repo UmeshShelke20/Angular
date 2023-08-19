@@ -1,0 +1,28 @@
+{
+  "Student": [
+    {
+      "id": 2,
+      "name": "Umesh Shelke",
+      "mobile": 9096092239,
+      "dept": "Mechanical Engineering"
+    },
+    {
+      "id": 4,
+      "name": "Ram Ramesh Kale",
+      "mobile": 90987675543,
+      "dept": "Civil"
+    },
+    {
+      "id": 7,
+      "name": "Radha Gopal Patil",
+      "mobile": 9876787876,
+      "dept": "Computer"
+    },
+    {
+      "id": 8,
+      "name": "Pooja RamKrushanan Jadhao",
+      "mobile": 9090900990,
+      "dept": "Com"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+<div style="text-align: center">
+       
+<form *ngIf="addstudent" [formGroup]="loginform" (ngSubmit)="saveForm()" style="margin-top: 2cm;">
+
+    <label for="name" >Enter name :</label >
+<input type="text" formControlName="sname" id="name" placeholder="eg.Umesh Shelke" >
+<br>
+<label for="roll">Enter Rollno :</label>
+<input type="number" formControlName="rollno" id="roll" placeholder="eg.100">
+<br>
+<div formGroupName="address">
+    <label for="town">Enter Town : </label>
+<input type="text" formControlName="town" placeholder="eg.Dhotra Bhangoji">
+<br>
+<label for="taluka">Enter Taluka Name : </label>
+<input id="taluka" type="text" formControlName="taluka" placeholder="eg.Chikhli">
+<br>
+<label for="distric">Enter Distric : </label>
+<input id="distric" type="text" formControlName="distric" placeholder="eg.Buldana">
+<br>
+<label  for="state">Enter State Name : </label>
+<input  id="state" type="text" formControlName="state" placeholder="eg.Maharashtra">
+<br>
+<label for="country">Enter Country Name : </label>
+<input id="country" type="text" formControlName="country" placeholder="eg.India">
+<br>
+<label for="pincode">Enter Pin Code : </label>
+<input id="pincode" type="text" formControlName="pincode" placeholder="eg.443201">
+</div>
+<input type="submit" value="Add"  class="btn btn-primary">
+<input  style="margin-left: 1cm;" type="reset" value="Reset" (click)="resetForm()" class="btn btn-primary">
+
+</form>
+</div>
+<div *ngIf="alertf" class="alert alert-primary" role="alert">
+  Student Add SucessFully!
+</div>
+<div *ngIf="listview">
+    <h3>Student List</h3>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Student name</th>
+                <th scope="col">Rollno </th>
+                <th scope="col">Town</th>
+                <th scope="col">Taluka</th>
+                <th scope="col">District</th>
+                <th scope="col">State</th>
+                <th scope="col">Country</th>
+                <th scope="col">Pin code</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of cs.stu">
+        <td scope="row">{{s.sname}}</td>
+                <td>{{s.rollno}}</td>
+                <td>{{s.address.town}}</td>
+                <td>{{s.address.taluka}}</td>
+                <td> {{s.address.distric}}</td>
+                <td>{{s.address.state}}</td>
+                <td>{{s.address.country}}</td>
+                <td>{{s.address.pincode}}</td>
+                <td *ngIf="deletestudent"><button (click)="deleteStu(s) ">select for Delete</button></td>
+                
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="alertdel" class="alert alert-primary" role="alert">
+  'Student delete SucessFully!
+<!-- </div>
+  <div style="text-align: center; margin-top: 5cm;">
+    
+    <button type="button" class="btn btn-primary" (click)="getStudent()">Click me to View Students </button>
+  <br>
+  <button type="button" class="btn btn-primary" (click)="addStudent()">Click me to Add New Students </button>
+  <br>
+  <button type="button" class="btn btn-danger" (click)="deleteStudent()">Click me to delete Students</button>
+  
+  </div> -->
+  

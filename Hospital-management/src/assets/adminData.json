@@ -1,0 +1,70 @@
+{
+  "User": [
+    {
+      "id": 1,
+      "userid": "admin",
+      "password": "admin",
+      "firstname": "Umesh",
+      "lastname": "Shelke"
+    }
+  ],
+  "Patient": [
+    {
+      "name": "Ram",
+      "city": "Pune",
+      "state": "MH",
+      "date": "2023-06-24",
+      "time": "18:32",
+      "status": "PENDING",
+      "symptom": "Fever",
+      "precautions": "--",
+      "specialist": {
+        "dname": "Pooja",
+        "ddegree": "MBBS",
+        "dmobno": "1212121212",
+        "daddress": "Pune"
+      },
+      "id": 1
+    },
+    {
+      "name": "Pooja",
+      "city": "Mumbai",
+      "state": "JH",
+      "date": "2023-06-12",
+      "time": "12:12",
+      "status": "PENDING",
+      "symptom": "fever",
+      "precautions": "--",
+      "specialist": {
+        "dname": "Dr Ravi",
+        "ddegree": "--",
+        "dmobno": "9098676654",
+        "daddress": "Pune"
+      },
+      "id": 2
+    }
+  ],
+  "Doctor": [
+    {
+      "dname": "Umesh",
+      "ddegree": "mbbs",
+      "dmobno": "9876565654",
+      "daddress": "pune",
+      "id": 1
+    },
+    {
+      "dname": "Ram",
+      "ddegree": "MBBS",
+      "dmobno": "3232434343",
+      "daddress": "Pune",
+      "id": 2
+    },
+    {
+      "dname": "Sunanda Shelke",
+      "ddegree": "MBBS",
+      "dmobno": "9009876776",
+      "daddress": "Pune",
+      "id": 3
+    }
+  ]
+}

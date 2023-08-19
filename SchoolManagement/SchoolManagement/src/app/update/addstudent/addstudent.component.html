@@ -1,0 +1,66 @@
+
+  <div class="card-transparent" style="width: 30rem;">
+    <div class="card-body">
+        <form [formGroup]="Student">
+            <h2>Registration form for adding new </h2>
+                <h2>Student Details</h2>
+                <div class="input-group mb-3">
+                <input hidden type="number" formControlName="id">
+              </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1">Name</span>
+                  <input type="text" class="form-control" placeholder="Student Name" formControlName="name">
+                </div >
+                <div *ngIf="f['name'].touched && f['name'].errors?.['required']" class="text-danger error, input-group mb-3">
+                    Name required</div>
+               <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Rollno:</span>
+                <input type="number" class="form-control" placeholder="Student Rollno" formControlName="rollno">
+              </div>
+              <div *ngIf="f['rollno'].touched && f['rollno'].errors?.['required']" class="text-danger error, input-group mb-3">
+                rollno required</div>
+                <div formGroupName="address">
+              <h2>Address details</h2>
+              <div class="input-group mb-3">
+                <input hidden type="number" formControlName="id">
+              </div>
+            
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">City</span>
+                <input type="text" class="form-control" placeholder="city Name" formControlName="city">
+              </div >
+              <div *ngIf="g['city'].touched && g['city'].errors?.['required']" class="text-danger error, input-group mb-3">
+                city required</div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1">Taluka</span>
+                  <input type="text" class="form-control" placeholder="Taluka Name" formControlName="taluka">
+                </div >
+                <div *ngIf="g['taluka'].touched && g['taluka'].errors?.['required']" class="text-danger error, input-group mb-3">
+                  taluka required</div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1">District</span>
+                  <input type="text" class="form-control" placeholder="district Name" formControlName="district">
+                </div >
+                <div *ngIf="g['district'].touched && g['district'].errors?.['required']" class="text-danger error, input-group mb-3">
+                  district required</div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1">State</span>
+                  <input type="text" class="form-control" placeholder="State Name" formControlName="state">
+                </div >
+                <div *ngIf="g['state'].touched && g['state'].errors?.['required']" class="text-danger error, input-group mb-3">
+                  state required</div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1">Pincode</span>
+                  <input type="text" class="form-control" placeholder="Pincode Name" formControlName="pincode">
+                </div >
+                <div *ngIf="g['pincode'].touched && g['pincode'].errors?.['required']" class="text-danger error, input-group mb-3">
+                  pincode required</div>
+            </div>
+            <div class="d-flex p-2 justify-content-between">
+              <button class="btn btn-success" (click)="onSubmit()">Submit</button>
+              
+            </div>
+              </form>
+            
+    </div>
+  </div>

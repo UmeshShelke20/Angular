@@ -1,0 +1,18 @@
+<form [formGroup]="Country">
+  <select formControlName="state">
+    <option *ngFor="let state of states" [ngValue]="state">
+      {{ state.name }}
+    </option>
+  </select>
+</form>
+
+ <p>Form value: {{ Country.value | json }}</p>
+ <!-- {state: {name: 'New York', abbrev: 'NY'} } -->
+
+ <select multiple name="countries" [formControl]="countryControl">
+  <option *ngFor="let country of Countryes" [ngValue]="country">
+    {{ country.name }}
+  </option>
+</select>
+
+<p>Form value: {{ countryControl.value | json }}</p>

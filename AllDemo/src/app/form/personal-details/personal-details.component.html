@@ -1,0 +1,144 @@
+<div class="a">
+<div *ngIf="page==1" >
+        <h1>Personal Details</h1>
+        <br>
+        <br>
+        <label id="1">Name :</label>
+        <input id="1" type="text" [(ngModel)]="Name">
+        <br>
+        <br>
+        <label id="2">Email :</label>
+        <input id="2" type="email" [(ngModel)]="Email">
+        <br>
+        <br>
+        <label id="3">Mobile No :</label>
+        <input id="3" type="number" [(ngModel)]="MobileNo">
+        <br>
+        <br>
+        <label id="4">Aadhar No :</label>
+        <input id="4" type="number" [(ngModel)]="AdharNo">
+        <br>
+        <br>
+        <label id="5">Pan :</label>
+        <input id="5" type="number" [(ngModel)]="Pan">
+        <br>
+</div>
+        <br>
+    <div *ngIf="page==4">
+        <h3>Personal-details</h3>
+            Name    : {{Name}}
+            <br>
+        <br>
+            email id: {{Email}}
+            <br>
+        <br>
+            MobileNo : {{MobileNo}}
+            <br>
+        <br>
+            AdharNo  : {{AdharNo}}
+            <br>
+        <br>
+            Pan     : {{Pan}}
+    </div>
+<!---Address Details-->
+<div *ngIf="page==2" >
+<h1>Address Details</h1>
+<br>
+<br>
+<label id="11">City Name :</label>
+<input id="11" type="text" [(ngModel)]="CityName">
+<br>
+<br>
+<label id="12">Taluka :</label>
+<input id="12" type="text" [(ngModel)]="Taluka">
+<br>
+<br>
+<label id="13">District :</label>
+<input id="13" type="text" [(ngModel)]="District">
+<br>
+<br>
+<label id="14">State :</label>
+<input id="14" type="text" [(ngModel)]="State">
+<br>
+<br>
+<label id="15">Country :</label>
+<input id="15" type="text" [(ngModel)]="Country">
+<br>
+<br>
+<label id="16">Pin code :</label>
+<input id="16" type="text" [(ngModel)]="PinCode">
+<br>
+<br>
+</div>
+<div *ngIf="page==4">
+    <h3>Address Details</h3>
+    City Name :{{CityName}}
+    <br>
+<br>
+    Taluka : {{Taluka}}
+    <br>
+<br>
+    District : {{District}}
+    <br>
+<br>
+State : {{State}}
+    <br>
+<br>
+Country :{{Country}}
+<br>
+<br>
+Pin code :{{PinCode}}
+</div>
+<!--Educational Details-->
+
+<div *ngIf="page==3" >
+    <h1>Educational Details</h1>
+    <br>
+    <br>
+    <label  id="1">College Name :</label>
+    <input  id="1" type="text" [(ngModel)]="CollegeName">
+    <br>
+    <br>
+    <label id="2">Degree:</label>
+    <input id="2" type="text" [(ngModel)]="Degree">
+    <br>
+    <br>
+    <label id="3">Branch:</label>
+    <input id="3" type="text" [(ngModel)]="Branch">
+    <br>
+    <br>
+    <label id="4">Passing Year:</label>
+    <input id="4" type="text" [(ngModel)]="PassingYear">
+    <br>
+    <br>
+    <label id="5">SGPA:</label>
+    <input id="5" type="text" [(ngModel)]="SGPA">
+    <br>
+</div>
+    <br>
+<div *ngIf="page==4">
+    <h3>Educational Details</h3>
+    College Name : {{CollegeName}}
+        <br>
+    <br>
+    Degree: {{Degree}}
+        <br>
+    <br>
+    Branch : {{Branch}}
+        <br>
+    <br>
+    PassingYear  : {{PassingYear}}
+        <br>
+    <br>
+    SGPA     : {{SGPA}}
+</div>
+<div >
+    <br>
+    Page No:{{page}}
+    <br>
+    <button *ngIf="page!=4 && page!=3" (click)="nextpage()">Next</button>
+    <button *ngIf="page!=1" (click)="previouspage()">Previous</button>
+    <button *ngIf="page==3"(click)="submit()">submit</button>
+    <br>
+</div>
+</div>

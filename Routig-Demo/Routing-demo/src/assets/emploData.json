@@ -1,0 +1,13 @@
+{
+    "Employee":
+    [
+        {"id":1,
+        "ename":"Umesh",
+        "eage":32,
+        "emobile":9096092239,
+        "esalary":100000,
+        "edob":"20/06/1990",
+        "ebloodgroup":"O+",
+        "ereleno":9850497323}
+    ]
+}

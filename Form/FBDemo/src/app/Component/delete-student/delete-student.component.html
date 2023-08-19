@@ -1,0 +1,37 @@
+<p>delete-student works!</p>
+
+  <div *ngIf="listview">
+      <h3>Student List</h3>
+  <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Student name</th>
+                  <th scope="col">Rollno </th>
+                  <th scope="col">Town</th>
+                  <th scope="col">Taluka</th>
+                  <th scope="col">District</th>
+                  <th scope="col">State</th>
+                  <th scope="col">Country</th>
+                  <th scope="col">Pin code</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let s of slist">
+          <td scope="row">{{s.sname}}</td>
+                  <td>{{s.rollno}}</td>
+                  <td>{{s.address.town}}</td>
+                  <td>{{s.address.taluka}}</td>
+                  <td> {{s.address.distric}}</td>
+                  <td>{{s.address.state}}</td>
+                  <td>{{s.address.country}}</td>
+                  <td>{{s.address.pincode}}</td>
+                  <td *ngIf="deletestudent"><button (click)="deleteStu(s) ">select for Delete</button></td>
+                  
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <button type="button" class="btn btn-danger" (click)="deleteStudent()">Click me to delete Students</button>
+  <div *ngIf="alertf" class="alert alert-primary" role="alert">
+    Student Add SucessFully!
+  </div>

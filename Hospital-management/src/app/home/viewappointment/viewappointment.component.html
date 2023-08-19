@@ -1,0 +1,52 @@
+<style>
+    #a{
+    max-width:500px;margin:auto;line-height:normal;
+    }
+
+button{
+    margin-left:1cm;
+}
+</style>
+<nav class="navbar navbar-light" style="background-color: #e4fde3;">
+    <div>
+        <button type="button" class="btn btn-primary"  routerLink="/">back</button>
+    </div>
+</nav>
+<div class="container">
+    <label for="a">List of appointment</label>
+<table class="table">
+<tr>
+    <th>Id</th>
+    <th>Patient Name</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Status</th>
+    <th>Symptom</th>
+    <th>Precautions</th>
+    <th>Doctor name</th>
+    <th>Doctor degree</th>
+    <th>Doctor mobile</th>
+    <th>Doctor adress</th>
+    
+</tr>
+
+<tr *ngFor="let p of newpatients">
+<td>{{p.id}}</td>
+<td>{{p.name}}</td>
+<td>{{p.city}}</td>
+<td>{{p.state}}</td>
+<td>{{p.date}}</td>
+<td>{{p.time}}</td>
+<td>{{p.status}}</td>
+<td>{{p.symptom}}</td>
+<td>{{p.precautions}}</td>
+<td>{{p.specialist.dname}}</td>
+<td>{{p.specialist.ddegree}}</td>
+<td>{{p.specialist.dmobno}}</td>
+<td>{{p.specialist.daddress}}</td>
+
+</tr>
+</table>
+</div>

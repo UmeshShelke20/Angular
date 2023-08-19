@@ -1,0 +1,30 @@
+  
+  <form [formGroup]="updateform" style="margin-top: 2cm;">
+  
+    <label for="name" >Enter name :</label >
+<input type="text" formControlName="sname" id="name" placeholder="eg.Umesh Shelke" >
+<br>
+<label for="roll">Enter Rollno :</label>
+<input type="number" formControlName="rollno" id="roll" placeholder="eg.100">
+<br>
+<div formGroupName="address">
+    <label for="tow">Enter Town : </label>
+<input id="tow "  type="text" formControlName="town" placeholder="eg.Dhotra Bhangoji">
+<br>
+<label for="taluka">Enter Taluka Name : </label>
+<input id="taluka" type="text" formControlName="taluka" placeholder="eg.Chikhli">
+<br>
+<label for="distric">Enter Distric : </label>
+<input id="distric" type="text" formControlName="distric" placeholder="eg.Buldana">
+<br>
+<label  for="state">Enter State Name : </label>
+<input  id="state" type="text" formControlName="state" placeholder="eg.Maharashtra">
+<br>
+<label for="country">Enter Country Name : </label>
+<input id="country" type="text" formControlName="country" placeholder="eg.India">
+<br>
+<label for="pincode">Enter Pin Code : </label>
+<input id="pincode" type="text" formControlName="pincode" placeholder="eg.443201">
+</div>
+<input type="submit" value="Update"  class="btn btn-primary">
+</form>

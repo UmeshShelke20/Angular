@@ -1,0 +1,36 @@
+
+<div class="table">
+
+    <table>
+        <thead>
+            <tr>
+                <th>docId</th>
+                <th>custId</th>
+                <th>custName</th>
+                <th>adharcard</th>
+                <th>pancard</th>
+                <th>photo</th>
+                <th>signature</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="retriveDoc">
+            <tr *ngFor="let d of retriveDoc">
+                <td>{{d.docId}}</td>
+                <td>{{d.custId}}</td>
+                <td>{{d.custName}}</td>
+                <td><img [src]="'data:image/jpge;base64,'+d.adharcard"height="150"></td>
+                <td><img [src]="'data:image/jpge;base64,'+d.pancard"height="150"></td>
+                <td><img [src]="'data:image/jpge;base64,'+d.photo"height="150"></td>
+                <td><img [src]="'data:image/jpge;base64,'+d.signature"height="150"></td>
+                
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- docId:number=0
+    custId:number=0
+    custName:string=''
+    adharcard:[]=[]
+    pancard:[]=[]
+    photo:[]=[]
+    signature:[]=[] -->

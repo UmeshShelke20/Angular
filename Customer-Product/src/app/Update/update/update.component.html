@@ -1,0 +1,41 @@
+<!-- {{cust|json}} -->
+<form [formGroup]="customer" >
+    <h3>Customer Update form</h3>
+      <div class="input-group mb-3">
+          <input hidden="on" type="number" formControlName="cid" [ngModel]="cust.cid" >
+        </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Customer name</span>
+            <input type="text" class="form-control" placeholder="Customer name" formControlName="cname" [ngModel]="cust.cname">
+          </div >
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Customer Address</span>
+            <input type="text" class="form-control" placeholder="Customer Address" formControlName="caddress" [ngModel]="cust.caddress">
+          </div >
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Customer Email</span>
+            <input type="email" class="form-control" placeholder="Customer Email" formControlName="cemail" [ngModel]="cust.cemail">
+          </div >
+         <div formGroupName="product" >
+          <div class="input-group mb-3">
+            <input hidden="on" type="number" formControlName="pid" [ngModel]="cust.product.pid" >
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Product Name</span>
+            <input type="text" class="form-control" placeholder="Product Name" formControlName="pname" [ngModel]="cust.product.pname">
+          </div >
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Product Quantity</span>
+            <input type="number" class="form-control" placeholder="Product Quantity" formControlName="pquantity" [ngModel]="cust.product.pquantity">
+          </div >
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Product Price</span>
+            <input type="number" class="form-control" placeholder="Product Price" formControlName="pprice" [ngModel]="cust.product.pprice" >
+          </div >
+         </div>
+         <div class="d-flex p-2 justify-content-between">
+          
+          <button class="btn btn-primary" (click)="onSubmit()">Update</button>
+        </div>
+  </form>
+  

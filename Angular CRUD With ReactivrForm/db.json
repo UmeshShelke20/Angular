@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "xyz",
+      "address": "pune",
+      "mob": 1234567890,
+      "email": "abc@gmail.com"
+    },
+    {
+      "name": "dfg123",
+      "address": "dfsd",
+      "mob": "dfgdqh",
+      "email": "dfgh@gamil.com",
+      "id": 2
+    },
+    {
+      "name": "ffg",
+      "address": "gsd",
+      "mob": "fg",
+      "email": "fgf",
+      "id": 3
+    },
+    {
+      "name": "xyz123",
+      "address": "pune",
+      "mob": 1234567890,
+      "email": "abc@gmail.com",
+      "id": 4
+    }
+  ]
+}

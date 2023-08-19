@@ -1,0 +1,22 @@
+{
+  "User": [
+    {
+      "id": 1,
+      "name": "Umesh",
+      "email": "urshelke@com",
+      "phone": 9090,
+      "topic": "Angular",
+      "timePreference": "morning",
+      "subscibes": true
+    },
+    {
+      "name": "Umesh",
+      "email": "rob@rob",
+      "phone": 9098787767,
+      "topic": "Angular",
+      "timePreference": "evening",
+      "subscibes": true,
+      "id": 2
+    }
+  ]
+}

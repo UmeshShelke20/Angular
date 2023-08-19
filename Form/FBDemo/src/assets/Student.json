@@ -1,0 +1,17 @@
+{
+  "Student": [
+    {
+      "id": 1,
+      "sname": "Ram",
+      "rollno": 1,
+      "address": {
+        "town": "Ag",
+        "taluka": "gh",
+        "distric": "jg",
+        "state": "mh",
+        "country": "ind",
+        "pincode": "12"
+      }
+    }
+  ]
+}

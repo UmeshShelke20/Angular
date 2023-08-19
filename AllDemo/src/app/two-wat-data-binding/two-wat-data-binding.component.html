@@ -1,0 +1,27 @@
+<p>two-wat-data-binding works!</p>
+Enter User Name : <input type="text" [(ngModel)]="UserName">
+<br>
+<br>
+
+Enter Password : <input type="password" [(ngModel)]="Password">
+<br>
+<br>
+
+Enter mobile no: <input type="number" [(ngModel)]="mobileno">
+<br>
+<br>
+<button (click)="getdata()"> Submit</button>
+<br>
+<br>
+
+<div *ngIf="n==1">
+    User Name :{{UserName}}
+    <br>
+<br>
+    Password :{{Password}}
+    <br>
+<br>
+    mobile no:{{mobileno}}
+    <br>
+<br>
+</div>

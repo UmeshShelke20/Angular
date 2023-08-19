@@ -1,0 +1,11 @@
+
+<h2>EmployeeDetailsComponent</h2>
+<div>
+<button  (click)="getdetails()">showlist</button>
+<table >
+    <tr><th>Employee details</th></tr>
+    <tr>
+    <tr *ngFor="let s of slist"> <td>{{s}}</td>
+    <td> <button (click)="update(s)">update</button></td></tr>
+</table>
+</div>

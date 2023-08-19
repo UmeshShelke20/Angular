@@ -1,0 +1,53 @@
+
+{{newclass.value | json}}
+<!-- {{selected|json}} -->
+<form [formGroup]="newclass">
+  <h2>Registration form</h2>
+  <div class="input-group mb-3">
+    <input hidden="on" type="number" formControlName="id" >
+  </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">Class name</span>
+      <input type="text" class="form-control" placeholder="Class Name" formControlName="classname" >
+    </div >
+    <div  *ngIf="e['classname'].touched && e['classname'].errors?.['required']" class="text-danger error, input-group mb-3">
+       Class Name required</div>
+
+      <div  formArrayName="students" > 
+          <div  *ngFor="let stu of newclass.get('students')['controls'];let i=index"
+          formGroupName="{{i}}" >
+          
+       <div >
+        <label for="aa" class="col-sm-2">Student Name</label>
+        <select   formControlName="id" 
+         id="aa" 
+         class="form-control"  (change)="onchange(i)" >
+        <Option>---Select----</Option>
+        <option [value]="stu.id" *ngFor="let stu of Student">{{stu.name}}</option>
+        </select> 
+      </div>
+           </div>
+        </div>
+        <div>
+        </div>
+       
+  <div class="d-flex p-2 justify-content-between">
+    <button  class="btn btn-success" (click)="addStudent()">Add Student in Class</button> 
+    <button  class="btn btn-success" (click)="onSubmit()">Submit</button>
+  </div>
+    </form>
+  
+    <!-- <div >
+      <label for="aa" class="col-sm-2">Student Name</label>
+      <select multiple  
+              [(ngModel)]="selected"
+              id="aa" (ngModelChange)="changedept()"
+              >
+      <Option>---Select----</Option>
+      <option [value]="stu" *ngFor="let stu of Student">{{stu.name}}</option>
+      </select>
+     
+    </div> -->
+    <div *ngIf="!selected==null">
+      {{selected |json}}
+    </div>

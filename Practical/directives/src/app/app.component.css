@@ -1,0 +1,8 @@
+.special{
+    background-color:rgb(4, 128, 0);
+    font-size: 30px;
+}
+.nonspecial{
+    background-color: rgb(255, 0, 64);
+    font-size: 50px;
+}

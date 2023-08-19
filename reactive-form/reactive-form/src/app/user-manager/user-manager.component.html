@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="d-flex justify-content-between">
+        <app-user-form (editDataevent)="updateUserData($event)" [isEditMode]="isEditMode" (userDataevent)="userDataFromChild($event)" [editUserData]="userDataForEdit"></app-user-form>>
+        <app-user-table (editUser)="edituserData($event)" (deleteUser)="onClickDeleteUser($event)" [userData]="userEntries"></app-user-table>
+        </div>
+</div>
+
+<!-- <app-user-form [isEditMode]="isEditMode" (editDataevent)="updateUserData($event)" [editUserData]="userDataForEdit" (userDataevent)="userDataFromChild($event)"></app-user-form>
+        <app-user-table (editUser)="edituserData($event)" (deleteUser)="onClickDeleteUser($event)" [userData]="userEntries"></app-user-table> -->
+    

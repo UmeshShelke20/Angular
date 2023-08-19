@@ -1,0 +1,25 @@
+<p>fuctionality works!</p>
+
+<div class="a" >  
+    <div>
+    <h3>Calculator</h3>
+    <br>
+    <br>
+    Enter First Number : <input type="number" [(ngModel)]="num1">
+    <br>
+    <br>
+    Enter Second number: <input type="number" [(ngModel)]="num2">
+    <br>
+    <br>
+    <table>
+        <tr>
+            <td rowspan="2"><button (click)="add()"> add</button></td>
+            <td rowspan="2"><button (click)="sub()"> sub</button></td>
+            <td rowspan="2"><button (click)="mul()"> mul</button></td>
+            <td rowspan="2"><button (click)="div()"> div</button></td>
+            <td rowspan="2"><button (click)="clear()">clear</button></td>
+            <td rowspan="2">Answer :{{Ans}}</td>
+        </tr>
+    </table>
+    </div> 
+</div>

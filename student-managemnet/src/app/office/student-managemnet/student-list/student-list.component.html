@@ -1,0 +1,22 @@
+<div class="table" >
+    <table >
+    <thead>
+      <tr style="text-align: left;" >
+        <th >Id</th>
+        <th >Name</th>
+        <th >MobileNo</th>
+        <th >Department</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="text-align: left;" *ngFor="let s of slist">
+        <th >{{s.id}}</th>
+        <td>{{s.name}}</td>
+        <td>{{s.mobile}}</td>
+        <td>{{s.dept}}</td>
+        <td><button type="button" (click)="updatedata(s)" class="btn btn-primary">Update</button></td>
+        <td><button type="button" class="btn btn-danger"(click)="deletdata(s)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

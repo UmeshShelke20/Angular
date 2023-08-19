@@ -1,0 +1,60 @@
+<!-- Navbar -->
+<div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <app-navbar></app-navbar>
+<!-- Collapsible wrapper -->
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+ <!-- Navbar brand -->
+ <!-- Left links -->
+ <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+   <li class="nav-item">
+     <button (click)="home()">Home</button>
+   </li>
+   <li class="nav-item">
+     <button (click)="Aboutus()">About us</button>
+   </li>
+   <li class="nav-item">
+     <button (click)="Job()">Job</button>
+   </li>
+   <li class="nav-item">
+     <button (click)="inquiry()">Inquiry</button>
+   </li>
+   <li class="nav-item">
+     <button (click)="faq()">FAQs</button>
+   </li>
+ </ul>
+ <!-- Left links -->
+  </div>
+<button (click)="login()">Login</button>
+</nav>
+</div>
+<!-- home page -->
+<div *ngIf="status=='home'"  class="b" style='background-color:skyblue;' width='50%'  >
+  <app-mission></app-mission>
+</div>    
+<div *ngIf="status=='home'" class="b" style='background-color:#7CFC00;' width='50%' >
+  <app-goals></app-goals>
+</div>
+<div *ngIf="status=='home'" class="b" style='background-color:#FFBF00;' width='50%' >
+  <app-directives></app-directives>
+  </div>
+<!-- About us page -->
+<div *ngIf="status=='Aboutus'" class="b" style='background-color:#7CFC00;' width='50%' >
+<app-aboutus></app-aboutus>
+  </div>
+  <!-- faqs page -->
+<div *ngIf="status=='faq'" class="b" style='background-color:#7CFC00;' width='50%' >
+ <app-faqs></app-faqs>
+  </div>
+   <!-- inquiry page -->
+<div *ngIf="status=='inquiry'" class="b" style='background-color:#7CFC00;' width='50%' >
+  <app-inquiry></app-inquiry>
+  </div>
+  <!-- job page -->
+  <div *ngIf="status=='Job'"  style='background-color:#7CFC00;' width='50%' >
+    <app-job></app-job>
+    </div>
+  <!-- login page -->
+<div *ngIf="status=='login'" style='background-color:#7CFC00;' width='50%' >
+  <app-login></app-login>
+  </div>

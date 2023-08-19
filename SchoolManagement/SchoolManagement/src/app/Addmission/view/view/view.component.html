@@ -1,0 +1,61 @@
+<div style="background-color: rgba(16, 223, 16, 0.349);" *ngFor="let class of data">
+  <div class="table" >
+    <h3>Class Details</h3>
+    <table >
+    <thead >
+      <tr style="text-align: left;" >
+       <th colspan="4">Class id</th>
+       <th  colspan="4"> Class Name </th>
+       <th colspan="4"></th>
+       <th colspan="4"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="text-align: left;" >
+        <td colspan="4" >{{class.id}}</td>
+        <td  colspan="4">{{class.classname}}</td>
+        <td><button type="button" (click)="addstudata(class)" class="btn btn-primary">Add new Stdudent</button></td>
+        
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="table" >
+  <h3>Students Details</h3>
+  <table>
+    <thead>
+      <tr style="text-align: left;" >
+       <th>Stdudent ID</th>
+       <th>Name</th>
+       <th>Rollno</th>
+       <th>Address Id</th>
+       <th>City</th>
+       <th>Taluka</th>
+       <th>District</th>
+       <th>State</th>
+       <th>Pin code</th>
+       <th colspan="2">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr *ngFor="let s of class.students">
+  <td>{{s.id}}</td>
+  <td>{{s.name}}</td>
+  <td>{{s.rollno}}</td>
+  <td>{{s.address.id}}</td>
+  <td>{{s.address.city}}</td>
+  <td>{{s.address.taluka}}</td>
+  <td>{{s.address.district}}</td>
+  <td>{{s.address.state}}</td>
+  <td>{{s.address.pincode}}</td>
+  <td><button type="button" (click)="updatedata(s)" class="btn btn-primary">Update</button></td>
+  <td><button type="button" class="btn btn-danger"(click)="deletdata(s)">Remove from Class</button></td>
+  
+</tr>
+    </tbody>
+  </table>
+  
+</div>
+
+
+</div>

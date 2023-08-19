@@ -1,0 +1,129 @@
+If block only
+<div *ngIf="names.length>0">
+    <div *ngFor="let e of names">
+        {{e}}
+    </div>
+</div>
+<!--If- Else block only-->
+<div *ngIf="month.length >0, else abc"  class="abc">
+    <div *ngFor="let e of month">
+        {{e}}
+    </div>
+</div>
+<ng-template #abc ><h1 class="abc">No Data</h1></ng-template>
+<!--Finding Index of Array-->
+<h3>Finding Index of Array</h3>
+<div *ngFor="let e of names, index as i">
+    index is: {{i}} and Data is :{{e}}
+</div>
+<!--Finding enev Index of Array-->
+<h3>Finding Even Index of Array</h3>
+<div *ngFor="let e of names, index as i , even as e1">
+    <div *ngIf="e1" style="color: rgb(0, 255, 200);">
+        index is: {{i}} and Data is :{{e}}
+    </div>
+</div>
+
+
+
+<!--Finding Odd Index of Array-->
+<h3>Finding Odd Index of Array</h3>
+<div *ngFor="let e of names, index as i , odd as l1">
+    <div *ngIf="l1" style="color: rgb(255, 0, 85);">
+        index is: {{i}} and Data is :{{e}}
+    </div>
+</div>
+
+
+<!--Finding First Index of Array-->
+<h3>Finding First Index of Array</h3>
+<div *ngFor="let e of names, index as i , first as f">
+    <div *ngIf="f" style="color: rgb(102, 255, 0);">
+        index is: {{i}} and Data is :{{e}}
+    </div>
+</div>
+<!--Finding Last Index of Array-->
+<h3>Finding Last Index of Array</h3>
+<div *ngFor="let e of names, index as i , last as d">
+    <div *ngIf="d" style="color: rgb(255, 0, 55);">
+        index is: {{i}} and Data is :{{e}}
+    </div>
+</div>
+<!----Switch case---->
+<!-- <h3>Switch case</h3>
+<div>
+    Enter Your choice:<input type="text" [(ngModel)]="choice"> 
+</div>
+<div [ngSwitch]="choice">
+<div *ngSwitchCase="'pqr'">
+    Your choice is pqr!
+</div>
+<div *ngSwitchCase="'abc'">
+    Your choice is abc!
+</div>
+<div *ngSwitchCase="'xyz'">
+    Your choice is xyz!
+</div>
+<div *ngSwitchCase="'lmn'">
+    Your choice is lmn!
+</div>
+<div *ngSwitchDefault >
+    Your choice is wrong!
+</div>
+</div> -->
+<!---[ngstyle]-->
+<!-- <h3>
+    [ngstyle]
+</h3>
+
+<div [ngStyle]="{'color':'red'}">Hi this is Umesh </div>
+
+<div [ngClass]="{'abc':true}"> Second Examle Of Directives</div>
+
+<div [ngStyle]="{'color':'red'}" [ngClass]="{'abc':true}"> Third Example of Directives</div>
+
+<div [ngStyle]="getcolor()" [ngClass]="{'abc':true}"> Forth Example of Directives</div>
+ -->
+<!-- <h3>Country wise color change</h3>
+<div *ngFor="let s of clist index as i,first as f">  
+<div *ngIf="i==0,"  class="a">
+    {{s.Id}}&nbsp;&nbsp;&nbsp;{{s.Name}}&nbsp;&nbsp;&nbsp;{{s.Country}}
+</div>
+<div *ngIf="i==1,"  class="b">
+    {{s.Id}}&nbsp;&nbsp;&nbsp;{{s.Name}}&nbsp;&nbsp;&nbsp;{{s.Country}}
+</div>
+<div *ngIf="i==2,"  class="c">
+    {{s.Id}}&nbsp;&nbsp;&nbsp;{{s.Name}}&nbsp;&nbsp;&nbsp;{{s.Country}}
+</div>
+<div *ngIf="i==3,"  class="d">
+    {{s.Id}}&nbsp;&nbsp;&nbsp;{{s.Name}}&nbsp;&nbsp;&nbsp;{{s.Country}}
+</div>
+</div > -->
+
+<!-- 
+<button appMouseEffect> India</button>
+
+<div appMouseEffect>India Is Great</div>
+<div appMouseEffect>This is Umesh</div> -->
+
+
+<!-- 
+<div [appMouseEffect]="color">Highlight me!</div> -->
+<h1>My First Attribute Directive</h1>
+
+<h2>Pick a highlight color</h2>
+<div appMouseEffect="color">
+  <input type="radio" name="colors" (click)="color='lightgreen'">Green
+  <input type="radio" name="colors" (click)="color='yellow'">Yellow
+  <input type="radio" name="colors" (click)="color='cyan'">Cyan
+</div>
+<!-- <p [appMouseEffect]="color">Highlight me!</p> -->
+<p [appMouseEffect]="color" defaultColor="violet">
+    Highlight me too!
+  </p>
+
+  <p>Use ngNonBindable to stop evaluation.</p>
+<p ngNonBindable>This should not evaluate: {{ 1 + 1 }}</p>
+<h3>ngNonBindable with a directive</h3>
+<div ngNonBindable [appMouseEffect]="'yellow'">This should not evaluate: {{ 1 +1 }}, but will highlight yellow.
+</div>

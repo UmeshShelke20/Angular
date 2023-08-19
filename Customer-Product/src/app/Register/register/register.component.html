@@ -1,0 +1,92 @@
+<button class="btn btn-secondary" (click)="withOldProduct()">Register with Old Product</button>
+<button class="btn btn-secondary" (click)="newproducts()">Register with new Product</button>
+
+<div *ngIf="newproduct">
+  <form [formGroup]="customer" >
+    <h3>Customer Registration form</h3>
+      <div class="input-group mb-3">
+          <input hidden type="number" formControlName="cid" >
+        </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Customer name</span>
+            <input type="text" class="form-control" placeholder="Customer name" formControlName="cname" >
+          </div >
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Customer Address</span>
+            <input type="text" class="form-control" placeholder="Customer Address" formControlName="caddress" >
+          </div >
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Customer Email</span>
+            <input type="email" class="form-control" placeholder="Customer Email" formControlName="cemail" >
+          </div >
+         <div formGroupName="product" >
+          <div class="input-group mb-3">
+            <input hidden type="number" formControlName="pid" >
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Product Name</span>
+            <input type="text" class="form-control" placeholder="Product Name" formControlName="pname" >
+          </div >
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Product Quantity</span>
+            <input type="number" class="form-control" placeholder="Product Quantity" formControlName="pquantity" >
+          </div >
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Product Price</span>
+            <input type="number" class="form-control" placeholder="Product Price" formControlName="pprice" >
+          </div >
+         </div>
+         <div class="d-flex p-2 justify-content-between">
+          
+          <button class="btn btn-primary" (click)="onSubmit()">Submit form</button>
+        </div>
+  </form>
+  
+</div>
+
+
+<div *ngIf="newproduct==false">
+  <!-- {{oldcustomer.value |json}} -->
+  <form [formGroup]="oldcustomer" >
+    <h3>Customer Registration form</h3>
+      <div class="input-group mb-3">
+          <input hidden type="number" formControlName="cid" [value]="0">
+        </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Customer name</span>
+            <input type="text" class="form-control" placeholder="Customer name" formControlName="cname" >
+          </div >
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Customer Address</span>
+            <input type="text" class="form-control" placeholder="Customer Address" formControlName="caddress" >
+          </div >
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Customer Email</span>
+            <input type="email" class="form-control" placeholder="Customer Email" formControlName="cemail" >
+          </div >
+          <div formGroupName="product" >
+            <label for="aa" class="col-sm-2">Select Product Name</label>
+            <select  formControlName="pid"
+                    id="aa"  (change)="selectproduct()"
+                    class="form-control">
+            <Option >---Select----</Option>
+            <option [value]="pro.pid" *ngFor="let pro of Products">{{pro.pname}}</option>
+            </select>
+          </div>
+         <div class="d-flex p-2 justify-content-between">
+          <button class="btn btn-primary" (click)="oldSubmit()">Submit form</button>
+        </div>
+  </form>
+</div>
+
+    <!-- <div >
+      <label for="aa" class="col-sm-2">Student Name</label>
+      <select multiple  
+              [(ngModel)]="selected"
+              id="aa" (ngModelChange)="changedept()"
+              >
+      <Option>---Select----</Option>
+      <option [value]="stu" *ngFor="let stu of Student">{{stu.name}}</option>
+      </select>
+     
+    </div> -->

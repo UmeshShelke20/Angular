@@ -1,0 +1,36 @@
+<style>
+    #a{
+    max-width:500px;margin:auto;line-height:normal;
+    }    
+    button{
+    margin-left:1cm;
+    }
+    </style>
+<nav class="navbar navbar-light" style="background-color: #e3effd;">
+    <div>
+        <button type="button" class="btn btn-primary"  routerLink="/home">back</button>
+        <button type="button" class="btn btn-primary" routerLink="/Admin">Login</button>
+        <button type="button" class="btn btn-primary" routerLink="/getapointment">Get-Apointment</button>
+        <button type="button" class="btn btn-primary" routerLink="/viewapointment">View-Apointment</button>
+    </div>
+</nav>
+<h1></h1>
+<div class="container">
+    <label for="a">Doctors Available to get appointment</label>
+<table class="table">
+<tr>
+    <th>Id</th>
+    <th>Doctor name</th>
+    <th>Doctor degree</th>
+    <th>Doctor mobile</th>
+    <th>Doctor adress</th>
+</tr>
+<tr *ngFor="let p of newDoctor">
+<td>{{p.id}}</td>
+<td>{{p.dname}}</td>
+<td>{{p.ddegree}}</td>
+<td>{{p.dmobno}}</td>
+<td>{{p.daddress}}</td>
+</tr>
+</table>
+</div>

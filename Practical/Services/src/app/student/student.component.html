@@ -1,0 +1,10 @@
+<p>student works!</p>
+<div *ngFor="let s of data.data">
+    {{s.Rollno}},{{s.Name}},{{s.Marks}}
+    <button (click)="data.changedata()">Update</button>
+<div *ngIf="data.change">
+   Enter Rollno<input type="number" [(ngModel)]="s.Rollno">
+   Enter Name<input type="text" [(ngModel)]="s.Name">
+   Enter Marks<input type="number" [(ngModel)]="s.Marks">
+</div>
+</div>

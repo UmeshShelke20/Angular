@@ -1,0 +1,31 @@
+<div class="table">
+
+    <table>
+<tr>
+    <th>Cid</th>
+<th>Customer name</th>
+<th>Customer address</th>
+<th>Customer EMAIL</th>
+<th>Product pid</th>
+<th>Product name</th>
+<th>Product quantity</th>
+<th>Product price</th>
+<th>Update</th>
+<th>Delete</th>
+</tr>
+<tr *ngFor="let s of Custo">
+    <td>{{s.cid}}</td>
+    <td>{{s.cname}}</td>
+    <td>{{s.caddress}}</td>
+    <td>{{s.cemail}}</td>
+    <td>{{s.product.pid}}</td>
+    <td>{{s.product.pname}}</td>
+    <td>{{s.product.pquantity}}</td>
+    <td>{{s.product.pprice}}</td>
+    <!-- <td colspan="2"><input type="radio" id="1" name="id"  value="s.cid"></td> -->
+    <td><input  type="button"  class="btn-primary" value="Update" (click)="update(s.cid)"></td>
+    <td><input type="button" class="btn-danger" value="Delete" (click)="deletes(s.cid)"></td>
+</tr>
+ 
+    </table>
+</div>

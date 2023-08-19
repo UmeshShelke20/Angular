@@ -1,0 +1,191 @@
+<!---Employee login -->
+  <!---Login -->
+ <div style="margin-left: 2cm;margin-top: 1cm;">
+  <button type="button" class="btn btn-primary" (click)="homeReturn()">Home</button>
+ </div>
+ <div  *ngIf="home" >
+      <div   class="form-check" style="margin-left: 2cm; ">
+        <br >
+          <label style="color: rgb(0, 255, 89);"> Well come to Human-Resource Department</label>
+            <br>
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" (click)="hrLogin()">
+        <label class="form-check-label" for="flexRadioDefault1">
+          Admin Login
+        </label>
+      </div >                                    
+      <div class="form-check" style="margin-left: 2cm;">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"  (click)="emLogin()">
+        <label class="form-check-label" for="flexRadioDefault2">
+        Employee Login
+        </label>
+      </div>
+ </div>
+<!--------===================//////===============-->
+
+    <div *ngIf="hrlogin" style="margin-left: 2cm;" >
+    <!-- <form> -->
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Enter Your Id</label>
+          <input [(ngModel)]="hrid1" type="number" class="form-control" >
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input [(ngModel)]="password" type="password" class="form-control" >
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="admincheck()">Submit</button>
+      <!-- </form> -->
+  </div>
+  <div *ngIf="messege!=null" style="color: rgb(255, 0, 0);margin-left: 2cm;">
+    <h3>{{messege}}</h3>
+  </div>
+  <div *ngIf="emlogin" style="margin-left: 2cm;">
+    <!-- <form> -->
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Enter Your Id</label>
+          <input [(ngModel)]="id" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <button type="button" class="btn btn-primary" (click)="eminfo()">Submit</button>
+      <!-- </form> -->
+  </div>
+  <div *ngIf="emid" style="margin-left: 2cm;margin-top: 1cm;">
+    <h3> Employee Details</h3>
+    <!---Single User-->
+<table class="table">
+    <thead>
+    <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Name</th>
+    <th scope="col">Age</th>
+    <th scope="col">Mobile</th>
+    <th scope="col">Salary</th>
+    <th scope="col">DoB</th>
+    <th scope="col">Blod group</th>
+    <th scope="col">Relative no</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr >
+            <td >{{hr.emplo.id}}</td>
+            <td >{{hr.emplo.ename}}</td>
+            <td >{{hr.emplo.eage}}</td>
+            <td >{{hr.emplo.emobile}}</td>
+            <td >{{hr.emplo.esalary}}</td>
+            <td >{{hr.emplo.edob}}</td>
+            <td >{{hr.emplo.ebloodgroup}}</td>
+            <td >{{hr.emplo.ereleno}}</td>
+        </tr>
+    </tbody>
+  </table>
+  <div><button type="submit" class="btn btn-primary" (click)="emloyeeback()">back</button></div>
+  </div>
+  <!---Admin login-->
+  
+<div *ngIf="viewemp" style="margin-left: 2cm;margin-top: 1cm;">
+  <h3> Employee Details</h3>
+  <h3 *ngIf="deleteemp"> Select anyone for Delete</h3>
+  <h3 *ngIf="update"> Select anyone for Update</h3>
+<table class="table">
+  <thead>
+  <tr>
+  <th scope="col">Id</th>
+  <th scope="col">Name</th>
+  <th scope="col">Age</th>
+  <th scope="col">Mobile</th>
+  <th scope="col">Salary</th>
+  <th scope="col">DoB</th>
+  <th scope="col">Blod group</th>
+  <th scope="col">Relative no</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let s of elist">
+          <td >{{s.id}}</td>
+          <td >{{s.ename}}</td>
+          <td >{{s.eage}}</td>
+          <td >{{s.emobile}}</td>
+          <td >{{s.esalary}}</td>
+          <td >{{s.edob}}</td>
+          <td >{{s.ebloodgroup}}</td>
+          <td >{{s.ereleno}}</td>
+          <td *ngIf="update"><button type="submit" class="btn btn-primary" (click)="updatestart(s)">Update</button></td>
+          <td *ngIf="deleteemp"><button type="submit" class="btn btn-primary" (click)="deletStart(s)">Delete </button></td>
+      </tr>
+      
+  </tbody>
+</table>
+<div><button type="submit" class="btn btn-primary" (click)="adminhome()">back</button></div>
+</div>
+<div  *ngIf=" addemp || empupdate||deleteempview" style="margin-left: 2cm;">
+<!--New Employee-->
+    <h3 *ngIf="addemp">Add New Employee</h3>
+    <h3 *ngIf="empupdate">Update Employee</h3>
+    <h3 *ngIf="deleteempview">Delete Employee</h3>
+    <div class="mb-3">
+      <label *ngIf=" addemp || empupdate" class="form-label">Enter Employee Name</label>
+      <input [(ngModel)]="hr.emplo.ename" type="text" class="form-control" placeholder="eg.Umesh Shelke" >
+    </div>
+    <div class="mb-3">
+      <label *ngIf=" addemp || empupdate" class="form-label">Enter Employee Age</label>
+      <input [(ngModel)]="hr.emplo.eage" type="number" class="form-control"placeholder="eg.12"  >
+    </div>
+    <div class="mb-3">
+      <label *ngIf=" addemp || empupdate" class="form-label">Enter Employee Mobile</label>
+      <input [(ngModel)]="hr.emplo.emobile" type="number" class="form-control" placeholder="eg. 9090909090" >
+    </div>
+    <div class="mb-3">
+      <label *ngIf=" addemp || empupdate" class="form-label">Enter Employee Salary</label>
+      <input [(ngModel)]="hr.emplo.esalary" type="number" class="form-control" placeholder="eg.100000"  >
+    </div>
+    <div class="mb-3">
+      <label *ngIf=" addemp || empupdate" class="form-label">Enter Employee DOB</label>
+      <input [(ngModel)]="hr.emplo.edob" type="text" class="form-control" placeholder="eg.20/june/1990"  >
+    </div>
+    <div class="mb-3">
+      <label *ngIf=" addemp || empupdate" class="form-label">Enter Employee Blood Group</label>
+      <input [(ngModel)]="hr.emplo.ebloodgroup" type="text" class="form-control" placeholder="eg.O+"  >
+    </div>
+    <div class="mb-3">
+      <label *ngIf=" addemp || empupdate" class="form-label">Enter Relatve Mobile number</label>
+      <input [(ngModel)]="hr.emplo.ereleno" type="number" class="form-control" placeholder="eg.9090909090">
+    </div>
+    <button *ngIf="addemp" type="button" class="btn btn-primary" (click)="addEmployee(hr.emplo)">Submit</button>
+    <button *ngIf="empupdate" type="button" class="btn btn-primary" (click)="empUpdatecomplete(hr.emplo)">Update</button>
+    <button *ngIf="deleteempview" type="button" class="btn btn-primary" (click)="deleteempcomplete(hr.emplo)">Delete</button>
+    <button style="margin-left: 2cm; " type="submit" class="btn btn-primary" (click)="adminhome()">back</button>
+</div>
+
+
+<div *ngIf="admingate" >
+  <div *ngIf="admingate" class="form-check" style="margin-left: 2cm; ">
+    <br >
+      <label style="color: rgb(0, 255, 89);"> Select Your Choce</label>
+        <br>
+    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" (click)="uadateEmp()">
+    <label class="form-check-label" for="flexRadioDefault1">
+      Update
+    </label>
+  </div >                                    
+  <div *ngIf="admingate" class="form-check" style="margin-left: 2cm;">
+    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"  (click)="newEmp()">
+    <label class="form-check-label" for="flexRadioDefault2">
+    Add New Employee
+    </label>
+  </div>
+  <div *ngIf="admingate" class="form-check" style="margin-left: 2cm;">
+    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"  (click)="viewallEmp()">
+    <label class="form-check-label" for="flexRadioDefault2">
+    View all Employee list
+    </label>
+  </div>
+  <div *ngIf="admingate" class="form-check" style="margin-left: 2cm;">
+    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"  (click)="deleteEmp()">
+    <label class="form-check-label" for="flexRadioDefault2">
+    Detele Employee
+    </label>
+  </div>
+</div>
+<!----Update Logic-->
+<div>
+  
+</div>
+
